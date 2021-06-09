@@ -1,5 +1,7 @@
 # split2
 
+The bongo cat wpm animation is from https://github.com/nwii/oledbongocat.
+
 ![split2](imgur.com image replace me!)
 
 *A short description of the keyboard/project*
