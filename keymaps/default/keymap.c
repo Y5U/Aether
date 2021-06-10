@@ -36,6 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 #ifdef OLED_DRIVER_ENABLE
+#ifdef BONGOWPM
 char wpm_str[10];
 // WPM-responsive animation stuff here
 #    define IDLE_FRAMES 5
@@ -150,6 +151,17 @@ void oled_task_user(void) {
     //oled_write_P(PSTR("r/mk"), false);
     //set_current_wpm(0);
 }
+#endif
+#ifdef OLED_TEXT
+void oled_task_user(void) {
+    oled_set_cursor(0, 0);                            // sets cursor to (row, column) using charactar spacing (5 rows on 128x32 screen, anything more will overflow back to the top)
+    oled_write_P(PSTR(OLED_TEXT), false);
+
+    led_t led_state = host_keyboard_led_state();  // caps lock stuff, prints CAPS on new line if caps led is on
+    oled_set_cursor(0, 1);
+    oled_write_P(led_state.caps_lock ? PSTR("CAPS") : PSTR("       "), false);
+}
+#endif
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {

@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID   0x0000
 #define DEVICE_VER   0x0001
 #define MANUFACTURER ysu
-#define PRODUCT      split2
+#define PRODUCT      aether-kb
 
 /* key matrix size */
 #define MATRIX_ROWS 7
@@ -56,6 +56,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* end audio */
 /* oled */
 #ifdef OLED_DRIVER_ENABLE
+//#define BONGOWPM 		/* comment this if you don't want the bongo wpm animation */
+#define OLED_TEXT "bruh moment" /* uncomment if you want to display text instead of bongo cat */
 #define WPM_SMOOTHING 0.16
 #define WPM_ESTIMATED_WORD_SIZE 10
 #define WPM_ALLOW_COUNT_REGRESSOIN
