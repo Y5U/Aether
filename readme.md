@@ -1,4 +1,4 @@
-# Aether
+# Aether keyboard
 
 The bongo cat wpm animation is from https://github.com/nwii/oledbongocat.
 
