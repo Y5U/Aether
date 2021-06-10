@@ -49,10 +49,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* custom */
 /* audio */
-#define AUDIO_CLICKY
+#define AUDIO_CLICKY /* comment if you don't want beeps everytime you press a key */
+#ifdef AUDO_CLICKY
 #define AUDIO_PIN C4
 #define AUDIO_CLICKY_DELAY_DURATION 0
 #define AUDIO_CLICKY_FREQ_MAX 500.0f
+#endif
 /* end audio */
 /* oled */
 #ifdef OLED_DRIVER_ENABLE
