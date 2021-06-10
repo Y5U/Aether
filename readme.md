@@ -1,18 +1,20 @@
-# split2
+# Aether
 
 The bongo cat wpm animation is from https://github.com/nwii/oledbongocat.
 
-![split2](imgur.com image replace me!)
+A build to tutorial is coming soon.
+
+![split2](https://lutim.lagout.org/gallery#KXXLLhD0/1If5F8OY.jpg,mUbfvjGo/nt44O2jZ.jpg,ec3ZmRr5/fHDhFdkf.jpg,tlQ3bQG8/h7Twbx8I.jpg)
 
 *A short description of the keyboard/project*
 
-* Keyboard Maintainer: [Y5U](https://github.com/yourusername)
-* Hardware Supported: *The PCBs, controllers supported*
-* Hardware Availability: *Links to where you can find this hardware*
+* Keyboard Maintainer:   [Y5U](https://github.com/Y5U)
+* Hardware Supported:    Teensy(++) 2.0
+* Hardware Availability: [Teensy++ 2.0](https://www.pjrc.com/store/teensypp.html)
 
 Make example for this keyboard (after setting up your build environment):
 
-    make split2:default
+    make aether:default
 
 Flashing example for this keyboard:
 
