@@ -15,6 +15,7 @@
  */
 
 #pragma once
+//unsigned int gameMode;
 
 #include "quantum.h"
 

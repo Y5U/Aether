@@ -18,6 +18,11 @@
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
     _BASE,
+    _GAME,
+};
+
+enum custom_keycodes {
+    TOGGLE_GAME
 };
 
 // Defines the keycodes used by our macros in process_record_user
@@ -26,14 +31,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT(
 	KC_F1, KC_F2, CK_TOGG, KC_INS,
-		KC_F3, KC_F4, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_GRV, KC_ESC, KC_7, KC_8, KC_9, KC_0, KC_BSPC, CK_UP, KC_HOME,
+		KC_F3, KC_F4, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_GRV, KC_ESC, KC_7, KC_8, KC_9, KC_0, KC_BSPC, DF(_GAME), KC_HOME,
                 KC_F5, KC_F6, KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_MINS, KC_EQL, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLASH, CK_DOWN, KC_PGUP,
                 KC_F7, KC_F8, KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, KC_LBRC, KC_RBRC, KC_H, KC_J, KC_K, KC_L, KC_HOME, KC_ENT, CK_RST, KC_DEL,
                 KC_F9, KC_F10, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_QUOTE, KC_SCOLON, KC_N, KC_M, KC_DOT, KC_SLASH, KC_END, KC_RSFT, MU_TOG, KC_END,
                 KC_F11, KC_F12, KC_LCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_CLR, KC_SPC, KC_COMMA, KC_STOP, KC_DEL, KC_DEL, KC_UP, RESET, KC_PGDN,
                 KC_LEFT, KC_DOWN, KC_RGHT
+	),
+    /* Game */
+    [_GAME] = LAYOUT(
+	KC_F1, KC_F2, CK_TOGG, KC_INS,
+		KC_F3, KC_F4, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_GRV, KC_ESC, KC_7, KC_8, KC_9, KC_0, KC_BSPC, DF(_BASE), KC_HOME,
+                KC_F5, KC_F6, KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_MINS, KC_EQL, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLASH, CK_DOWN, KC_PGUP,
+                KC_F7, KC_F8, KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, KC_LBRC, KC_RBRC, KC_H, KC_J, KC_K, KC_L, KC_HOME, KC_ENT, CK_RST, KC_DEL,
+                KC_F9, KC_F10, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_QUOTE, KC_SCOLON, KC_N, KC_M, KC_DOT, KC_SLASH, KC_END, KC_RSFT, MU_TOG, KC_END,
+                KC_F11, KC_F12, KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, KC_CLR, KC_SPC, KC_COMMA, KC_STOP, KC_DEL, KC_DEL, KC_UP, RESET, KC_PGDN,
+                KC_LEFT, KC_DOWN, KC_RGHT
 	)
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if(keycode == TOGGLE_GAME){
+    }
+    return true;
+}
 
 #ifdef OLED_DRIVER_ENABLE
 #ifdef BONGOWPM
@@ -164,6 +185,4 @@ void oled_task_user(void) {
 #endif
 #endif
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    return true;
-}
+
