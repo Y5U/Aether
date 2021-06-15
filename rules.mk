@@ -22,3 +22,5 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = yes          # Audio output
 WPM_ENABLE = yes	    # For bongo cat
+DEBOUNCE_TYPE = sym_eager_pk
+bInterval = 1

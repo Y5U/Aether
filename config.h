@@ -48,6 +48,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DIODE_DIRECTION COL2ROW
 
 /* custom */
+/* misc */
+#define USB_POLLING_INTERVAL_MS 1
+#define QMK_KEYS_PER_SCAN 	12
+/* end misc */
 /* audio */
 #define AUDIO_CLICKY /* comment if you don't want beeps everytime you press a key */
 #ifdef 	AUDIO_CLICKY
@@ -110,7 +114,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#endif
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCE 3
+#define DEBOUNCE 1
 
 /* define if matrix has ghost (lacks anti-ghosting diodes) */
 //#define MATRIX_HAS_GHOST
